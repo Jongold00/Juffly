@@ -5,58 +5,84 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public float movementSpeed = 0.01f;
-    public float jumpConstant = 100f;
+    public float speedCo = 1f;
+
+    //private float currentMoveX = 0;
+    //private float currentMoveY = 0;
+    [Range(0, 9), SerializeField]
+    private float frictionFactor = 0.5f;
+    public float maxSpeed = 4f;
 
     [SerializeField]
-    private Rigidbody _rb;
+    private Transform playerTrans;
+
+    [SerializeField]
+    private Rigidbody2D rb2d;
+
+    private Vector2 inputVector = new Vector2(0, 0);
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        HandleInput();
+        inputVector = HandleInput();
+        UpdateMovement(inputVector);
+        //print(rb2d.velocity);
     }
 
-    void HandleInput()
+    Vector2 HandleInput()
     {
+        Vector2 ret = new Vector2(0, 0);
         if (Input.GetKey(KeyCode.W))
         {
-            // this.gameObject.transform.Translate(new Vector3(0, 0, movementSpeed));
-            _rb.AddForce(new Vector3(0, 0, movementSpeed));
+            ret.y += 1;
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            // this.gameObject.transform.Translate(new Vector3(-movementSpeed, 0, 0));
-            gameObject.transform.Rotate(new Vector3(0, 0, -movementSpeed));
-
+            ret.x -= 1;
         }
 
         if (Input.GetKey(KeyCode.S))
         {
-            // this.gameObject.transform.Translate(new Vector3(0, 0, -movementSpeed));
-            _rb.AddForce(new Vector3(0, 0, -movementSpeed));
-
+            ret.y -= 1; 
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            // this.gameObject.transform.Translate(new Vector3(movementSpeed, 0, 0));
-            gameObject.transform.Rotate(new Vector3(0, 0, movementSpeed));
-
+            ret.x += 1;
         }
+        return ret;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+
+    }
+
+    void UpdateMovement(Vector2 inp) 
+    {
+        Vector2 newForce = inp;
+        rb2d.AddForce(CapSpeed(newForce) * speedCo);
+
+
+    }
+
+    Vector2 CapSpeed(Vector2 inp)
+    {
+        Vector2 ret = inp;
+        if ((rb2d.velocity.x > maxSpeed && inp.x == 1) || (rb2d.velocity.x < -maxSpeed && inp.x == -1))
         {
-            // this.gameObject.transform.Translate(new Vector3(0, movementSpeed, 0));
-            _rb.AddForce(new Vector3(0, jumpConstant * movementSpeed, 0));
-
-
+            ret.x = 0;
         }
+
+        if ((rb2d.velocity.y > maxSpeed && inp.y == 1) || (rb2d.velocity.y < -maxSpeed && inp.y == -1))
+        {
+            ret.y = 0;
+        }
+        
+
+        return ret;
     }
 }
