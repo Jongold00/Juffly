@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour
     //private float currentMoveX = 0;
     //private float currentMoveY = 0;
     [Range(0, 9), SerializeField]
-    private float frictionFactor = 0.5f;
     public float maxSpeed = 4f;
 
     [SerializeField]
