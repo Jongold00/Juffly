@@ -39,7 +39,7 @@ public class CameraBehavior : MonoBehaviour
         playerOffset.y = topRight.y - transform.position.y;
 
 
-
+        /* nonsense shit ab screen size n following
         if (playerTrans.position.x + boundPadX > topRight.x)
         {
             print("right");
@@ -62,6 +62,7 @@ public class CameraBehavior : MonoBehaviour
             print("top");
             transform.position = new Vector3(transform.position.x, playerTrans.position.y - playerCameraOffset.y, -10);
         }
+        */
 
     }
 }

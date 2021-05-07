@@ -5,17 +5,26 @@ using UnityEngine.UI;
 
 public class Tab : MonoBehaviour
 {
-    public Canvas tabPrefab;
     public string tabName;
+    public GameObject[] panelsList;
+
+    private GameObject currentPanel;
 
 
-    public void OpenTab()
+    public void OpenPanel(int index)
     {
-        tabPrefab.enabled = true;
+        if (currentPanel)
+        {
+            currentPanel.SetActive(false);
+        }
+        panelsList[index].SetActive(true);
+        currentPanel = panelsList[index];
     }
 
-    public void CloseTab()
+    private void OnEnable()
     {
-        tabPrefab.enabled = false;
+        OpenPanel(0);
     }
+
+
 }
