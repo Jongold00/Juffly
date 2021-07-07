@@ -7,6 +7,7 @@ public abstract class AAbility : MonoBehaviour
 {
     public float cooldown;
     public Image logo;
+    public float range;
 
     public abstract void Cast(Transform playerTransform);
 
