@@ -10,5 +10,9 @@ public abstract class AAbility : MonoBehaviour
     public float range;
 
     public abstract void Cast(Transform playerTransform);
+    public float GetCooldown()
+    {
+        return cooldown;
+    }
 
 }
