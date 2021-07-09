@@ -5,13 +5,13 @@ using UnityEngine;
 public class AbilityManager : MonoBehaviour
 {
     private static AbilityManager _instance;
-    public AAbility[] abilityArray = new AAbility[5];
+    public AbilityFactory[] abilityArray = new AbilityFactory[5];
     [SerializeField]
     private int activeAbility = 0;
     [SerializeField]
     private Transform playerTransform;
     [SerializeField]
-    private Transform castPoint;
+    private GameObject castPoint;
     [SerializeField]
     private ActionBarManager actionBarManager;
 
@@ -57,27 +57,27 @@ public class AbilityManager : MonoBehaviour
 
     void ManageInput()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1) && cdArray[0] <= 0.0f)
         {
             abilityArray[0].Cast(castPoint);
             ActionUsed(0);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha2) && cdArray[1] <= 0.0f)
         {
             abilityArray[1].Cast(castPoint);
             ActionUsed(1);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.Alpha3) && cdArray[2] <= 0.0f)
         {
             abilityArray[2].Cast(castPoint);
             ActionUsed(2);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
+        if (Input.GetKeyDown(KeyCode.Alpha4) && cdArray[3] <= 0.0f)
         {
             abilityArray[3].Cast(castPoint);
             ActionUsed(3);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha5))
+        if (Input.GetKeyDown(KeyCode.Alpha5) && cdArray[4] <= 0.0f)
         {
             abilityArray[4].Cast(castPoint);
             ActionUsed(4);

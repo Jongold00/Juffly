@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class AAbility : MonoBehaviour
+public abstract class AbilityFactory : MonoBehaviour
 {
     public float cooldown;
-    public Image logo;
+    public Sprite logo;
     public float range;
+    public GameObject basePrefab;
 
-    public abstract void Cast(Transform playerTransform);
+    public abstract void Cast(GameObject castPoint);
     public float GetCooldown()
     {
         return cooldown;
