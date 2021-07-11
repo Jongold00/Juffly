@@ -47,14 +47,12 @@ public class ElementStat : MonoBehaviour
     private void ScaleStatBar()
     {
         float percentageIn = (stat / 6000);
-        print("percentage in " + percentageIn.ToString());
         statBar.localScale = new Vector3(1f, 0.01f + ((maxBarScale.y - minBarScale.y) * percentageIn), 1f);
         statBar.localPosition = new Vector3(0, -50 + ((maxBarScale.x - minBarScale.x) * percentageIn), 0);
     }
 
     public void CalculateLevel()
     {
-        print("remaining xp = " + GetNextCutoff().ToString());
         if (GetNextCutoff() <= 0)
         {
             stat -= 6000; // placeholder nonsense

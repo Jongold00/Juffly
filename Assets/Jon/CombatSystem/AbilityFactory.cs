@@ -11,6 +11,11 @@ public abstract class AbilityFactory : MonoBehaviour
     public GameObject basePrefab;
 
     public abstract void Cast(GameObject castPoint);
+
+    public bool PlayerAbilityCollision(GameObject collisionObject)
+    {
+        return collisionObject.CompareTag("Player");
+    }
     public float GetCooldown()
     {
         return cooldown;
