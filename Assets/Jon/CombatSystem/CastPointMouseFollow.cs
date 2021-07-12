@@ -15,6 +15,5 @@ public class CastPointMouseFollow : MonoBehaviour
         dir.z = 0;
         dir.Normalize();
         transform.position = playerTransform.position - dir;
-        // Debug.DrawLine(this.transform.parent.position, this.transform.parent.position + dir * 10, Color.red, Mathf.Infinity);
     }
 }

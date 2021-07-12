@@ -11,7 +11,6 @@ public class BasicSlap : AbilityFactory
         Vector3 worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3 (Input.mousePosition.x, Input.mousePosition.y, playerTransform.transform.position.z));
         Vector3 castDir = worldMousePosition - playerTransform.transform.position;
         castDir.Normalize();
-        // print("cast direction: " + castDir);
         if (Physics2D.Raycast(playerTransform.transform.position, castDir, 2))
         {
             print("hit");

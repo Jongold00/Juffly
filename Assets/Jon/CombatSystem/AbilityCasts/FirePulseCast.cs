@@ -2,15 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireballCast : AbilityCast
+public class FirePulseCast : AbilityCast
 {
-
-
     private void Update()
     {
         UpdateLifeSpan();
-        rb.velocity = transform.up * velocity * -1;
+    }
 
+    public void Start()
+    {
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(castPoint, range, new Vector2(0, 0), 0.0f);
+        foreach (RaycastHit2D curr in hits) {
+            print(curr.transform.gameObject.name);
+            curr.transform.gameObject.GetComponent<Health>().takeDamage(damage);
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -22,6 +27,5 @@ public class FireballCast : AbilityCast
         collision.gameObject.GetComponent<Health>().takeDamage(damage);
         Destroy(gameObject);
     }
-
 
 }

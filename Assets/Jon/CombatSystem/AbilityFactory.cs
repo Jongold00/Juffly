@@ -9,7 +9,8 @@ public abstract class AbilityFactory : MonoBehaviour
     public Sprite logo;
     public float range;
     public GameObject basePrefab;
-
+    public float damage;
+    public float velocity;
     public abstract void Cast(GameObject castPoint);
 
     public bool PlayerAbilityCollision(GameObject collisionObject)
