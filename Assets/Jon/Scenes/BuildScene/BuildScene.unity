@@ -403,7 +403,6 @@ GameObject:
   - component: {fileID: 92924167}
   - component: {fileID: 92924166}
   - component: {fileID: 92924165}
-  - component: {fileID: 92924164}
   m_Layer: 5
   m_Name: Talent (1)
   m_TagString: Untagged
@@ -411,22 +410,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &92924164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 92924163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce324278a498c3f45ba69efbc37a1abe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxRanks: 3
-  currentRanks: 0
-  prereqs:
-  - {fileID: 721743500}
 --- !u!114 &92924165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1336,7 +1319,6 @@ GameObject:
   - component: {fileID: 212758816}
   - component: {fileID: 212758815}
   - component: {fileID: 212758814}
-  - component: {fileID: 212758813}
   m_Layer: 5
   m_Name: Talent (3)
   m_TagString: Untagged
@@ -1364,22 +1346,6 @@ RectTransform:
   m_AnchoredPosition: {x: 70, y: -111}
   m_SizeDelta: {x: 100, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &212758813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 212758811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce324278a498c3f45ba69efbc37a1abe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxRanks: 2
-  currentRanks: 0
-  prereqs:
-  - {fileID: 834823756}
 --- !u!114 &212758814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2094,9 +2060,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   talents:
-  - {fileID: 1517252555}
-  - {fileID: 1856941145}
-  - {fileID: 1762303364}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   buttons:
   - {fileID: 1517252556}
   - {fileID: 1856941146}
@@ -2339,7 +2305,6 @@ GameObject:
   - component: {fileID: 489952023}
   - component: {fileID: 489952022}
   - component: {fileID: 489952021}
-  - component: {fileID: 489952020}
   m_Layer: 5
   m_Name: Talent (1)
   m_TagString: Untagged
@@ -2347,22 +2312,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &489952020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 489952019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce324278a498c3f45ba69efbc37a1abe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxRanks: 3
-  currentRanks: 0
-  prereqs:
-  - {fileID: 661945805}
 --- !u!114 &489952021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7736,7 +7685,6 @@ GameObject:
   - component: {fileID: 661945808}
   - component: {fileID: 661945807}
   - component: {fileID: 661945806}
-  - component: {fileID: 661945805}
   m_Layer: 5
   m_Name: Talent
   m_TagString: Untagged
@@ -7744,21 +7692,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &661945805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 661945804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce324278a498c3f45ba69efbc37a1abe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxRanks: 5
-  currentRanks: 0
-  prereqs: []
 --- !u!114 &661945806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7885,7 +7818,6 @@ GameObject:
   - component: {fileID: 721743499}
   - component: {fileID: 721743498}
   - component: {fileID: 721743497}
-  - component: {fileID: 721743500}
   m_Layer: 5
   m_Name: Talent
   m_TagString: Untagged
@@ -8007,21 +7939,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 721743495}
   m_CullTransparentMesh: 1
---- !u!114 &721743500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 721743495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce324278a498c3f45ba69efbc37a1abe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxRanks: 5
-  currentRanks: 0
-  prereqs: []
 --- !u!1 &793370396
 GameObject:
   m_ObjectHideFlags: 0
@@ -8297,7 +8214,6 @@ GameObject:
   - component: {fileID: 834823759}
   - component: {fileID: 834823758}
   - component: {fileID: 834823757}
-  - component: {fileID: 834823756}
   m_Layer: 5
   m_Name: Talent (2)
   m_TagString: Untagged
@@ -8305,22 +8221,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &834823756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 834823755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce324278a498c3f45ba69efbc37a1abe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxRanks: 5
-  currentRanks: 0
-  prereqs:
-  - {fileID: 489952020}
 --- !u!114 &834823757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10735,7 +10635,6 @@ GameObject:
   - component: {fileID: 1517252558}
   - component: {fileID: 1517252557}
   - component: {fileID: 1517252556}
-  - component: {fileID: 1517252555}
   m_Layer: 5
   m_Name: Talent
   m_TagString: Untagged
@@ -10743,21 +10642,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1517252555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1517252554}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce324278a498c3f45ba69efbc37a1abe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxRanks: 5
-  currentRanks: 0
-  prereqs: []
 --- !u!114 &1517252556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11106,7 +10990,6 @@ GameObject:
   - component: {fileID: 1569946551}
   - component: {fileID: 1569946550}
   - component: {fileID: 1569946549}
-  - component: {fileID: 1569946548}
   m_Layer: 5
   m_Name: Talent (4)
   m_TagString: Untagged
@@ -11134,22 +11017,6 @@ RectTransform:
   m_AnchoredPosition: {x: 70, y: -111}
   m_SizeDelta: {x: 100, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1569946548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1569946546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce324278a498c3f45ba69efbc37a1abe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxRanks: 2
-  currentRanks: 0
-  prereqs:
-  - {fileID: 1737082952}
 --- !u!114 &1569946549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11862,11 +11729,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   talents:
-  - {fileID: 721743500}
-  - {fileID: 92924164}
-  - {fileID: 1818739534}
-  - {fileID: 1737082952}
-  - {fileID: 1569946548}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   buttons:
   - {fileID: 721743497}
   - {fileID: 92924165}
@@ -11886,7 +11753,6 @@ GameObject:
   - component: {fileID: 1737082955}
   - component: {fileID: 1737082954}
   - component: {fileID: 1737082953}
-  - component: {fileID: 1737082952}
   m_Layer: 5
   m_Name: Talent (3)
   m_TagString: Untagged
@@ -11894,22 +11760,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1737082952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1737082951}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce324278a498c3f45ba69efbc37a1abe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxRanks: 5
-  currentRanks: 0
-  prereqs:
-  - {fileID: 92924164}
 --- !u!114 &1737082953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12111,7 +11961,6 @@ GameObject:
   - component: {fileID: 1762303367}
   - component: {fileID: 1762303366}
   - component: {fileID: 1762303365}
-  - component: {fileID: 1762303364}
   m_Layer: 5
   m_Name: Talent (2)
   m_TagString: Untagged
@@ -12139,22 +11988,6 @@ RectTransform:
   m_AnchoredPosition: {x: -68, y: -2}
   m_SizeDelta: {x: 100, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1762303364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1762303362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce324278a498c3f45ba69efbc37a1abe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxRanks: 2
-  currentRanks: 0
-  prereqs:
-  - {fileID: 1856941145}
 --- !u!114 &1762303365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12346,7 +12179,6 @@ GameObject:
   - component: {fileID: 1818739537}
   - component: {fileID: 1818739536}
   - component: {fileID: 1818739535}
-  - component: {fileID: 1818739534}
   m_Layer: 5
   m_Name: Talent (2)
   m_TagString: Untagged
@@ -12374,22 +12206,6 @@ RectTransform:
   m_AnchoredPosition: {x: -68, y: -2}
   m_SizeDelta: {x: 100, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1818739534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818739532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce324278a498c3f45ba69efbc37a1abe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxRanks: 2
-  currentRanks: 0
-  prereqs:
-  - {fileID: 92924164}
 --- !u!114 &1818739535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12621,7 +12437,6 @@ GameObject:
   - component: {fileID: 1856941148}
   - component: {fileID: 1856941147}
   - component: {fileID: 1856941146}
-  - component: {fileID: 1856941145}
   m_Layer: 5
   m_Name: Talent (1)
   m_TagString: Untagged
@@ -12629,22 +12444,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1856941145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1856941144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce324278a498c3f45ba69efbc37a1abe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxRanks: 3
-  currentRanks: 0
-  prereqs:
-  - {fileID: 1517252555}
 --- !u!114 &1856941146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13131,10 +12930,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   talents:
-  - {fileID: 661945805}
-  - {fileID: 489952020}
-  - {fileID: 834823756}
-  - {fileID: 212758813}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   buttons:
   - {fileID: 661945806}
   - {fileID: 489952021}

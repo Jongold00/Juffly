@@ -21,7 +21,7 @@ public class CameraBehavior : MonoBehaviour
     // Update is called once per frame
     private void Start()
     {
-        camera = GetComponent<Camera>();
+
         topRight = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
         bottomLeft = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
 

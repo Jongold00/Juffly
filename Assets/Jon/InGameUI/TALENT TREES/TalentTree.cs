@@ -8,6 +8,8 @@ public class TalentTree : MonoBehaviour
 {
     public Talent[] talents;    // these indices must match up
     public Button[] buttons;    // index of button = index of corresponding talent
+    private SpellbookManager spellbook;
+
 
     
     public int availablePoints = 10;
@@ -20,6 +22,16 @@ public class TalentTree : MonoBehaviour
         DeactivateAll();
         CheckUnlocked();
     }
+
+    private void ApplyUpgrades()
+    {
+        foreach (Talent curr in talents)
+        {
+
+        }
+    }
+
+    // all functionality for upgrading and activating talents
 
     public void AddPointTo(int index)
     {
@@ -69,4 +81,6 @@ public class TalentTree : MonoBehaviour
     {
         buttons[i].gameObject.GetComponentInChildren<TextMeshProUGUI>().text = talents[i].currentRanks.ToString() + '/' + talents[i].maxRanks.ToString();
     }
+
+
 }

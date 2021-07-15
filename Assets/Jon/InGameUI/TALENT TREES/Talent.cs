@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Talent : MonoBehaviour
+public abstract class Talent : MonoBehaviour
 {
     public int maxRanks;
     public int currentRanks;
     public Talent[] prereqs;
 
+    public abstract void Apply(AbilityFactory modAbility);
     public void Increment()
     {
         currentRanks++;
