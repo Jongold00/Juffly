@@ -34,11 +34,9 @@ public class ActionBarManager : MonoBehaviour       // this class is purely UI, 
 
 
 
-
-    // Update is called once per frame
-    void Update()
+    public GameObject[] GetSlotArray()
     {
-
+        return slotArray;
     }
     
     public void SetCDText(int ind, float cd)

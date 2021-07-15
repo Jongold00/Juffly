@@ -8,6 +8,7 @@ public class SpellbookManager : MonoBehaviour
     [SerializeField]
     List<AbilityFactory> availableSpells;
     ActionBarManager actionBar;
+    AbilityManager abilityManager;
 
     public static SpellbookManager GetInstance()
     {
@@ -23,11 +24,12 @@ public class SpellbookManager : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
         actionBar = FindObjectOfType<ActionBarManager>();
+        abilityManager = FindObjectOfType<AbilityManager>();
     }
 
-    public void SelectAbility(int ind)
+    public void SelectAbility(int bookIndex, int barIndex)
     {
-
+        abilityManager.LoadInAbility(availableSpells[bookIndex], barIndex);
     }
 
     public int LoadAbilityIntoBook(AbilityFactory spell) // returns the index of the loaded ability

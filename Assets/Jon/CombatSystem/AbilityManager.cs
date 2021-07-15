@@ -47,6 +47,13 @@ public class AbilityManager : MonoBehaviour
 
     }
 
+    public void LoadInAbility(AbilityFactory spell, int barIndex)
+    {
+        abilityArray[barIndex] = spell;
+        actionBarManager.SetAbilityLogo(barIndex);
+
+    }
+
 
 
     // Update is called once per frame
@@ -57,27 +64,27 @@ public class AbilityManager : MonoBehaviour
 
     void ManageInput()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1) && cdArray[0] <= 0.0f)
+        if (abilityArray[0] && Input.GetKeyDown(KeyCode.Alpha1) && cdArray[0] <= 0.0f)
         {
             abilityArray[0].Cast(castPoint);
             ActionUsed(0);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2) && cdArray[1] <= 0.0f)
+        if (abilityArray[1] && Input.GetKeyDown(KeyCode.Alpha2) && cdArray[1] <= 0.0f)
         {
             abilityArray[1].Cast(castPoint);
             ActionUsed(1);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3) && cdArray[2] <= 0.0f)
+        if (abilityArray[2] && Input.GetKeyDown(KeyCode.Alpha3) && cdArray[2] <= 0.0f)
         {
             abilityArray[2].Cast(castPoint);
             ActionUsed(2);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha4) && cdArray[3] <= 0.0f)
+        if (abilityArray[3] && Input.GetKeyDown(KeyCode.Alpha4) && cdArray[3] <= 0.0f)
         {
             abilityArray[3].Cast(castPoint);
             ActionUsed(3);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha5) && cdArray[4] <= 0.0f)
+        if (abilityArray[4] && Input.GetKeyDown(KeyCode.Alpha5) && cdArray[4] <= 0.0f)
         {
             abilityArray[4].Cast(castPoint);
             ActionUsed(4);
@@ -99,7 +106,6 @@ public class AbilityManager : MonoBehaviour
         SetCooldown(ind, abilityArray[ind].GetCooldown());
         actionBarManager.InstantiateCDPrefab(ind);
 
-        actionBarManager.SetAbilityLogo(ind); // this is in the wrong spot... waiting until ability swapping is put in place to set it
 
     }
 

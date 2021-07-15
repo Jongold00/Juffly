@@ -7,7 +7,7 @@ public class CameraBehavior : MonoBehaviour
     [SerializeField]
     private Transform playerTrans;
 
-    private Camera camera;
+    // private Camera camera;
 
     private Vector3 bottomLeft;
     private Vector3 topRight;
@@ -22,8 +22,8 @@ public class CameraBehavior : MonoBehaviour
     private void Start()
     {
         camera = GetComponent<Camera>();
-        topRight = camera.ViewportToWorldPoint(new Vector3(1, 1, 0));
-        bottomLeft = camera.ViewportToWorldPoint(new Vector3(0, 0, 0));
+        topRight = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
+        bottomLeft = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
 
         playerCameraOffset.x = (topRight.x - boundPadX);
         playerCameraOffset.y = (topRight.y - boundPadY);
@@ -32,37 +32,12 @@ public class CameraBehavior : MonoBehaviour
     }
     void Update()
     {
-        topRight = camera.ViewportToWorldPoint(new Vector3(1, 1, 0));
-        bottomLeft = camera.ViewportToWorldPoint(new Vector3(0, 0, 0));
+        topRight = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
+        bottomLeft = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
 
         playerOffset.x = topRight.x - transform.position.x;
         playerOffset.y = topRight.y - transform.position.y;
 
-
-        /* nonsense shit ab screen size n following
-        if (playerTrans.position.x + boundPadX > topRight.x)
-        {
-            print("right");
-            transform.position = new Vector3(playerTrans.position.x - playerCameraOffset.x, transform.position.y, -10);
-        }
-
-        if (playerTrans.position.x - boundPadX < bottomLeft.x)
-        {
-            print("left");
-
-            transform.position = new Vector3(playerTrans.position.x + playerCameraOffset.x, transform.position.y, -10);
-        }
-        if (playerTrans.position.y - boundPadY < bottomLeft.y && Input.GetKey(KeyCode.S))
-        {
-            print("bottom");
-            transform.position = new Vector3(transform.position.x, playerTrans.position.y + playerCameraOffset.y, -10);
-        }
-        if (playerTrans.position.y + boundPadY > topRight.y && Input.GetKey(KeyCode.W))
-        {
-            print("top");
-            transform.position = new Vector3(transform.position.x, playerTrans.position.y - playerCameraOffset.y, -10);
-        }
-        */
 
     }
 }

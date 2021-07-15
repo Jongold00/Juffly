@@ -13,11 +13,14 @@ public class SpellbookEntry : MonoBehaviour
 
     Vector2 slotPos;
     Vector2 startPos;
+    int slotToDropIn;
 
     [SerializeField]
     private AbilityFactory abilityFactory;
 
     private SpellbookManager spellbook;
+    private ActionBarManager actionBarManager;
+
     [SerializeField]
     private int indexInBook;
 
@@ -28,11 +31,12 @@ public class SpellbookEntry : MonoBehaviour
         startPos = transform.position;
         spellbook = FindObjectOfType<SpellbookManager>();
         indexInBook = LoadIntoSpellbook();
+        actionBarManager = FindObjectOfType<ActionBarManager>();
+        gameObject.GetComponent<Image>().sprite = abilityFactory.logo;
     }
 
     private void Update()
     {
-        print(onBar);
         if (dragging)
         {
             transform.position = Input.mousePosition;
@@ -58,7 +62,8 @@ public class SpellbookEntry : MonoBehaviour
         dragging = false;
         if (onBar)
         {
-            transform.position = slotPos;
+            spellbook.SelectAbility(indexInBook, slotToDropIn);
+            transform.position = startPos;
         }
         else
         {
@@ -68,11 +73,12 @@ public class SpellbookEntry : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("hello");
+
         if (collision.CompareTag("ActionBarSlot"))
         {
             onBar = true;
-            slotPos = collision.transform.position;
+            slotToDropIn = GetSlotNumberHit(collision);
+
         }
     }
 
@@ -81,8 +87,20 @@ public class SpellbookEntry : MonoBehaviour
         if (collision.CompareTag("ActionBarSlot"))
         {
             onBar = false;
-
         }
+    }
+
+    int GetSlotNumberHit(Collider2D collision)
+    {
+        GameObject[] slotArray = actionBarManager.GetSlotArray();
+        for (int i = 0; i < slotArray.Length; i++)
+        {
+            if (slotArray[i].Equals(collision.gameObject))
+            {
+                return i;
+            }
+        }
+        return -1;
     }
 
 

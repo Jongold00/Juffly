@@ -13,7 +13,6 @@ public class FirePulseCast : AbilityCast
     {
         RaycastHit2D[] hits = Physics2D.CircleCastAll(castPoint, range, new Vector2(0, 0), 0.0f);
         foreach (RaycastHit2D curr in hits) {
-            print(curr.transform.gameObject.name);
             curr.transform.gameObject.GetComponent<Health>().takeDamage(damage);
         }
     }
