@@ -99,6 +99,8 @@ public class AbilityManager : MonoBehaviour
         SetCooldown(ind, abilityArray[ind].GetCooldown());
         actionBarManager.InstantiateCDPrefab(ind);
 
+        actionBarManager.SetAbilityLogo(ind); // this is in the wrong spot... waiting until ability swapping is put in place to set it
+
     }
 
 
@@ -113,4 +115,6 @@ public class AbilityManager : MonoBehaviour
     {
         return activeAbility;
     }
+
+
 }

@@ -65,6 +65,10 @@ public class ActionBarManager : MonoBehaviour       // this class is purely UI, 
         textObjects[ind] = newInstance.GetComponentInChildren<TextMeshProUGUI>();
     }
 
+    public void SetAbilityLogo(int ind)
+    {
+        slotArray[ind].transform.GetChild(0).gameObject.GetComponent<Image>().sprite = abilityManager.abilityArray[ind].GetLogo();
+    }
 
     public void HighlightSlot()         // this functionality is in the wrong place, should be a part of item selection, not ability bar
     {
@@ -73,5 +77,7 @@ public class ActionBarManager : MonoBehaviour       // this class is purely UI, 
             curr.GetComponent<Image>().sprite = slotSprite;
         }
         slotArray[abilityManager.GetActiveAbility()].GetComponent<Image>().sprite = highlightedSlotSprite;        
-    } 
+    }
+
+
 } 

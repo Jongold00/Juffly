@@ -15,8 +15,6 @@ public class InGameUIHandler : MonoBehaviour
         
     }
     
-    
-
     public void OpenTab(int i)
     {
         if (currTab && currTab.GetComponent<Tab>().tabName == allTabs[i].GetComponent<Tab>().tabName) // hitting button for currently active tab

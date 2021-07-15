@@ -22,4 +22,9 @@ public abstract class AbilityFactory : MonoBehaviour
         return cooldown;
     }
 
+    public Sprite GetLogo()
+    {
+        return logo;
+    }
+
 }
