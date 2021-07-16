@@ -8,7 +8,7 @@ public abstract class Talent : MonoBehaviour
     public int currentRanks;
     public Talent[] prereqs;
 
-    public abstract void Apply(AbilityFactory modAbility);
+    public abstract void Apply();
     public void Increment()
     {
         currentRanks++;

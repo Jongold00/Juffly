@@ -23,19 +23,13 @@ public class TalentTree : MonoBehaviour
         CheckUnlocked();
     }
 
-    private void ApplyUpgrades()
-    {
-        foreach (Talent curr in talents)
-        {
-
-        }
-    }
 
     // all functionality for upgrading and activating talents
 
     public void AddPointTo(int index)
     {
         talents[index].Increment();
+        talents[index].Apply();
         availablePoints = Mathf.Max(0, availablePoints - 1);
         UpdateTalentText(index);
         CheckUnlocked();

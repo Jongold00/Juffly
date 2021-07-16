@@ -38,6 +38,18 @@ public class SpellbookManager : MonoBehaviour
         return availableSpells.Count - 1;
     }
 
+    public AbilityFactory GetAbilityByID(int id)
+    {
+        foreach (AbilityFactory curr in availableSpells)
+        {
+            if (curr.CheckID(id))
+            {
+                return curr;
+            }
+        }
+        return null;
+    }
+
 
 
 }
