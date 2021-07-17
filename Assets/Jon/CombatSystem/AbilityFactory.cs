@@ -16,7 +16,6 @@ public abstract class AbilityFactory : MonoBehaviour
     public float velocity;
     public abstract void Cast(GameObject castPoint);
 
-    public List<UpgradeTalent> talentMods;
 
     public bool PlayerAbilityCollision(GameObject collisionObject)
     {
@@ -32,10 +31,6 @@ public abstract class AbilityFactory : MonoBehaviour
         return logo;
     }
 
-    public void ApplyUpgradeTalent(UpgradeTalent talent)
-    {
-        talentMods.Add(talent);
-    }
 
     public bool CheckID(int id)
     {

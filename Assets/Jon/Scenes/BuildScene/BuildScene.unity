@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -431,6 +431,7 @@ MonoBehaviour:
   rangeModifier: 3
   velocityModifier: 2
   spellModID: 0
+  test: {fileID: 0}
 --- !u!114 &92924165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1774,6 +1775,7 @@ GameObject:
   - component: {fileID: 349236905}
   - component: {fileID: 349236907}
   - component: {fileID: 349236908}
+  - component: {fileID: 349236909}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -1847,6 +1849,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableSpells: []
+--- !u!114 &349236909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349236904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2b110acfbde4b04695cf92f0c0d6ffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  talentTrees: []
+  activeUpgradeTalents: []
+  spellbook: {fileID: 0}
 --- !u!1 &379875476
 GameObject:
   m_ObjectHideFlags: 0
@@ -1908,6 +1925,7 @@ MonoBehaviour:
   - {fileID: 1517252556}
   - {fileID: 1856941146}
   - {fileID: 1762303365}
+  tim: {fileID: 0}
   availablePoints: 10
 --- !u!114 &379875479
 MonoBehaviour:
@@ -7763,8 +7781,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300020, guid: 8aeb9e233fbb8f14db39770841b78b94, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -7799,8 +7817,9 @@ MonoBehaviour:
   damageModifier: 3
   cooldownModifier: 3
   rangeModifier: 3
-  velocityModifier: 2
+  velocityModifier: 1.1
   spellModID: 0
+  test: {fileID: 0}
 --- !u!1 &793370396
 GameObject:
   m_ObjectHideFlags: 0
@@ -10900,6 +10919,7 @@ MonoBehaviour:
   rangeModifier: 3
   velocityModifier: 2
   spellModID: 0
+  test: {fileID: 0}
 --- !u!114 &1569946549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11318,7 +11338,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1683739743
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11405,6 +11425,7 @@ MonoBehaviour:
   - {fileID: 1818739535}
   - {fileID: 1737082953}
   - {fileID: 1569946549}
+  tim: {fileID: 0}
   availablePoints: 10
 --- !u!1 &1737082951
 GameObject:
@@ -11446,6 +11467,7 @@ MonoBehaviour:
   rangeModifier: 3
   velocityModifier: 2
   spellModID: 0
+  test: {fileID: 0}
 --- !u!114 &1737082953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11864,6 +11886,7 @@ MonoBehaviour:
   rangeModifier: 3
   velocityModifier: 2
   spellModID: 0
+  test: {fileID: 0}
 --- !u!114 &1818739535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12597,6 +12620,7 @@ MonoBehaviour:
   - {fileID: 489952021}
   - {fileID: 834823757}
   - {fileID: 212758814}
+  tim: {fileID: 0}
   availablePoints: 10
 --- !u!114 &1924251793
 MonoBehaviour:

@@ -9,12 +9,15 @@ public class TalentTree : MonoBehaviour
     public Talent[] talents;    // these indices must match up
     public Button[] buttons;    // index of button = index of corresponding talent
     private SpellbookManager spellbook;
-
+    [SerializeField]
+    private TalentIntegrationManager tim;
 
     
     public int availablePoints = 10;
     void Start()
     {
+        tim = FindObjectOfType<TalentIntegrationManager>();
+        tim.AddTalentTree(this);
         for (int i = 0; i < talents.Length; i++)
         {
             UpdateTalentText(i);
@@ -29,11 +32,12 @@ public class TalentTree : MonoBehaviour
     public void AddPointTo(int index)
     {
         talents[index].Increment();
-        talents[index].Apply();
         availablePoints = Mathf.Max(0, availablePoints - 1);
         UpdateTalentText(index);
         CheckUnlocked();
         CheckAvailability();
+        tim.SortTalents();
+        tim.ApplyTalents();
     }
 
     private void CheckUnlocked()

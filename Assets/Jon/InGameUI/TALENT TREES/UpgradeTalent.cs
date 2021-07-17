@@ -13,18 +13,21 @@ public class UpgradeTalent : Talent
     [SerializeField]
     protected float velocityModifier;
 
-    [SerializeField]
-    protected int spellModID;
-    protected AbilityFactory modAbility;
+    public int spellModID;
+
+    public AbilityFactory test;
 
 
     private void Start()
     {
-        modAbility = FindObjectOfType<SpellbookManager>().GetAbilityByID(spellModID);
     }
-    public override void Apply()
+    public void Apply(AbilityFactory modAbility)
     {
-        modAbility.ApplyUpgradeTalent(this);
+        test = modAbility;
+        modAbility.damage *= damageModifier * currentRanks;
+        modAbility.cooldown *= cooldownModifier * currentRanks;
+        modAbility.range *= rangeModifier * currentRanks;
+        modAbility.velocity *= velocityModifier * currentRanks;
     }
 
     public float GetDamageMod()

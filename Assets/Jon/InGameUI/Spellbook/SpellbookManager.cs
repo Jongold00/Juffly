@@ -50,6 +50,4 @@ public class SpellbookManager : MonoBehaviour
         return null;
     }
 
-
-
 }
