@@ -295,7 +295,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 684694766}
-  - component: {fileID: 684694765}
+  - component: {fileID: 684694767}
   m_Layer: 0
   m_Name: LevelGenerator
   m_TagString: Untagged
@@ -303,27 +303,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &684694765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 684694764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebefabcce81bce642a1890562ab8340a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initChance: 30
-  birthLimit: 3
-  deathLimit: 3
-  cycles: 2
-  tmapSize: {x: 40, y: 40, z: 0}
-  topMap: {fileID: 1137124922}
-  bottomMap: {fileID: 148440736}
-  topTile: {fileID: 11400000, guid: 9e9b659e18870fb4b97d6e0060a25b64, type: 2}
-  bottomTile: {fileID: 11400000, guid: 1752f858e33952640933083f5d1adfab, type: 2}
 --- !u!4 &684694766
 Transform:
   m_ObjectHideFlags: 0
@@ -338,6 +317,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &684694767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684694764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebefabcce81bce642a1890562ab8340a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iniChance: 45
+  birthLimit: 4
+  deathLimit: 4
+  numR: 3
+  tmpSize: {x: 120, y: 50, z: 0}
+  topMap: {fileID: 1137124922}
+  botMap: {fileID: 148440736}
+  topTile: {fileID: 11400000, guid: 9e9b659e18870fb4b97d6e0060a25b64, type: 2}
+  botTile: {fileID: 11400000, guid: 1752f858e33952640933083f5d1adfab, type: 2}
 --- !u!1 &1137124919
 GameObject:
   m_ObjectHideFlags: 0
