@@ -12,16 +12,14 @@ public class OnClickPlayGame : MonoBehaviour
     public MenuDirector menuDirector;
     void Start()
     {
+        menuDirector = FindObjectOfType<MenuDirector>();
         onClickFunction = OnClickFunction;
-        Register(menuDirector);
+        menuDirector.RegisterOnClick(index, onClickFunction);
     }
 
     void OnClickFunction()
     {
         SceneManager.LoadScene(1);
     }
-    public void Register(MenuDirector menuDir)
-    {
-        menuDir.RegisterOnClick(index, onClickFunction);
-    }
+
 }

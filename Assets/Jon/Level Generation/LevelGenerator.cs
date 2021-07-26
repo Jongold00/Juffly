@@ -183,8 +183,9 @@ public class LevelGenerator : MonoBehaviour
 
         if (mf)
         {
+            
             var savePath = "Assets/Jon/Level Generation/GeneratedLevels/" + saveName + ".prefab";
-            if (PrefabUtility.CreatePrefab(savePath, mf))
+            if (PrefabUtility.SaveAsPrefabAsset(mf, savePath))
             {
                 EditorUtility.DisplayDialog("Tilemap saved", "Your Tilemap was saved under" + savePath, "Continue");
             }
