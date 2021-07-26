@@ -6,7 +6,8 @@ using UnityEditor;
 
 public class LevelGenerator : MonoBehaviour
 {
-
+    public int seed;
+    public bool useRandomSeed;
 
     [Range(0, 100)]
     public int iniChance;
@@ -20,7 +21,7 @@ public class LevelGenerator : MonoBehaviour
     private int count = 0;
 
     private int[,] terrainMap;
-    public Vector3Int tmpSize;
+
     public Tilemap topMap;
     public Tilemap botMap;
     public Tile topTile;
@@ -32,8 +33,18 @@ public class LevelGenerator : MonoBehaviour
     public void doSim(int nu)
     {
         clearMap(false);
-        width = tmpSize.x;
-        height = tmpSize.y;
+
+        if (useRandomSeed)
+        {
+            Random.InitState(Mathf.FloorToInt(Time.time));
+        }
+        else
+        {
+            Random.InitState(seed);
+        }
+
+        width = Random.Range(70, 120);
+        height = Random.Range(70, 120);
 
         if (terrainMap == null)
         {
@@ -172,7 +183,7 @@ public class LevelGenerator : MonoBehaviour
 
         if (mf)
         {
-            var savePath = "Assets/" + saveName + ".prefab";
+            var savePath = "Assets/Jon/Level Generation/GeneratedLevels/" + saveName + ".prefab";
             if (PrefabUtility.CreatePrefab(savePath, mf))
             {
                 EditorUtility.DisplayDialog("Tilemap saved", "Your Tilemap was saved under" + savePath, "Continue");
