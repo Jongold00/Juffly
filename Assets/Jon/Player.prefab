@@ -53,6 +53,7 @@ MonoBehaviour:
   maxSpeed: 6
   playerTrans: {fileID: 6193296636145006585}
   rb2d: {fileID: 6193296636145006580}
+  anim: {fileID: 7767156754195694567}
 --- !u!61 &6193296636145006587
 BoxCollider2D:
   m_ObjectHideFlags: 0

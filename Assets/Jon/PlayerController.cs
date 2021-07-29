@@ -18,7 +18,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Rigidbody2D rb2d;
 
-    private Vector2 inputVector = new Vector2(0, 0);
+    [SerializeField]
+    private Animator anim;
+
+    int lastDirPressed = 3;
+
+    public Vector2Int inputVector = new Vector2Int(0, 0);
     // Start is called before the first frame update
     void Start()
     {
@@ -30,12 +35,13 @@ public class PlayerController : MonoBehaviour
     {
         inputVector = HandleInput();
         UpdateMovement(inputVector);
-        //print(rb2d.velocity);
+        SetAnimRunState();
+        
     }
 
-    Vector2 HandleInput()
+    Vector2Int HandleInput()
     {
-        Vector2 ret = new Vector2(0, 0);
+        Vector2Int ret = new Vector2Int(0, 0);
         if (Input.GetKey(KeyCode.W))
         {
             ret.y += 1;
@@ -55,6 +61,29 @@ public class PlayerController : MonoBehaviour
         {
             ret.x += 1;
         }
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            lastDirPressed = 1;
+        }
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            lastDirPressed = 2;
+        }
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            lastDirPressed = 3;
+        }
+
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            lastDirPressed = 4;
+        }
+
+
+
         return ret;
 
 
@@ -64,6 +93,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 newForce = inp;
         rb2d.AddForce(CapSpeed(newForce) * speedCo);
+
 
 
     }
@@ -83,5 +113,14 @@ public class PlayerController : MonoBehaviour
         
 
         return ret;
+    }
+
+    void SetAnimRunState()
+    {
+        anim.SetFloat("speed", rb2d.velocity.magnitude);
+        anim.SetInteger("dirX", inputVector.x);
+        anim.SetInteger("dirY", inputVector.y);
+        anim.SetInteger("lastDir", lastDirPressed);
+
     }
 }
