@@ -33,13 +33,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        inputVector = HandleInput();
+        HandleInput();
         UpdateMovement(inputVector);
         SetAnimRunState();
         
     }
 
-    Vector2Int HandleInput()
+    void HandleInput()
     {
         Vector2Int ret = new Vector2Int(0, 0);
         if (Input.GetKey(KeyCode.W))
@@ -62,6 +62,8 @@ public class PlayerController : MonoBehaviour
             ret.x += 1;
         }
 
+
+
         if (Input.GetKeyDown(KeyCode.W))
         {
             lastDirPressed = 1;
@@ -82,9 +84,41 @@ public class PlayerController : MonoBehaviour
             lastDirPressed = 4;
         }
 
+        inputVector = ret;
 
-
-        return ret;
+        if ((Input.GetKeyUp(KeyCode.W) ||
+            Input.GetKeyUp(KeyCode.A) ||
+            Input.GetKeyUp(KeyCode.S) ||
+            Input.GetKeyUp(KeyCode.D)) 
+            && (inputVector.x != 0 || inputVector.y != 0))    // handling anim states for if a movement button is released but others are still held
+        {
+            switch (inputVector.y)
+            {
+                case 1:
+                    print("up");
+                    lastDirPressed = 1;
+                    break;
+                case -1:
+                    print("down");
+                    lastDirPressed = 3;
+                    break;
+                case 0:
+                    break;
+            }
+            switch (inputVector.x)
+            {
+                case -1:
+                    print("left");
+                    lastDirPressed = 2;
+                    break;
+                case 1:
+                    print("right");
+                    lastDirPressed = 4;
+                    break;
+                case 0:
+                    break;
+            }
+        }
 
 
     }
