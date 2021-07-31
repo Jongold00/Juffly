@@ -95,11 +95,9 @@ public class PlayerController : MonoBehaviour
             switch (inputVector.y)
             {
                 case 1:
-                    print("up");
                     lastDirPressed = 1;
                     break;
                 case -1:
-                    print("down");
                     lastDirPressed = 3;
                     break;
                 case 0:
@@ -108,11 +106,9 @@ public class PlayerController : MonoBehaviour
             switch (inputVector.x)
             {
                 case -1:
-                    print("left");
                     lastDirPressed = 2;
                     break;
                 case 1:
-                    print("right");
                     lastDirPressed = 4;
                     break;
                 case 0:
