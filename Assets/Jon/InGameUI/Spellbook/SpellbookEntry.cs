@@ -28,11 +28,14 @@ public class SpellbookEntry : MonoBehaviour
 
     private void Start()
     {
-        startPos = transform.position;
         spellbook = FindObjectOfType<SpellbookManager>();
         indexInBook = LoadIntoSpellbook();
         actionBarManager = FindObjectOfType<ActionBarManager>();
+
+        startPos = spellbook.CalculatePositionInBook(indexInBook);
+        transform.localPosition = startPos;
         gameObject.GetComponent<Image>().sprite = abilityFactory.logo;
+
     }
 
     private void Update()
@@ -63,11 +66,11 @@ public class SpellbookEntry : MonoBehaviour
         if (onBar)
         {
             spellbook.SelectAbility(indexInBook, slotToDropIn);
-            transform.position = startPos;
+            transform.localPosition = startPos;
         }
         else
         {
-            transform.position = startPos;
+            transform.localPosition = startPos;
         }
     }
 
